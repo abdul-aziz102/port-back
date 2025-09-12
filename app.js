@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // ✅ Contact API
 app.use('/contact', ContactRoute);
+app.get('/', (req, res) => {
+  res.send("Hello from Express server");
+});
+
 
 app.listen(5000, () =>
   console.log("Server is running on port 5000")
