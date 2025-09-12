@@ -6,10 +6,10 @@ import ContactRoute from './routes/contact_route.js';
 const app = express();
 
 // ✅ Use CORS
+
 app.use(cors({
-  origin: "http://localhost:5173", // frontend ka URL (Vite ka default port 5173 hota hai)
+  origin: ["https://ab-aziz-port.vercel.app"], // ✅ apna frontend domain allow karo
   methods: ["GET", "POST"],
-  credentials: true
 }));
 
 app.use(express.json());
