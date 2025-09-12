@@ -1,11 +1,9 @@
 import express from "express";
 import cors from "cors";
 import createdb from "./db.js"; // ✅ db.js import
-
 import ContactRoute from "./routes/contact_route.js";
 
 const app = express();
-
 
 app.use(
   cors({
@@ -17,6 +15,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ✅ Correct mount point
 app.use("/contact", ContactRoute);
 
 app.get("/", (req, res) => {
