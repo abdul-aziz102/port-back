@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://ab-aziz-port.vercel.app"],
+    origin: ["https://ab-aziz-port.vercel.app/"],
     methods: ["GET", "POST"],
   })
 );
