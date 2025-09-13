@@ -10,16 +10,10 @@ export const Contact_from = async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // ✅ yahan database me save hoga
-    const newContact = new Contact({
-      name,
-      email,
-      message,
-    });
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
 
-    await newContact.save(); // DB me store karega
-
-    res.status(200).json({ success: true, msg: "Message sent successfully" });
+    res.status(200).json({ success: true, msg: "Message saved successfully ✅" });
   } catch (error) {
     console.error("Controller Error:", error.message);
     res.status(500).json({ error: "Internal Server Error" });
