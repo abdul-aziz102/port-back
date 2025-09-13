@@ -11,6 +11,7 @@ app.use(
     methods: ["GET", "POST"],
   })
 );
+createdb(); // ✅ Database connection
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
